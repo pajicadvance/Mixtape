@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static java.lang.Float.POSITIVE_INFINITY;
 import static net.minecraft.sound.SoundCategory.MUSIC;
 
 @Environment(EnvType.CLIENT)
@@ -125,7 +124,7 @@ public class Mixtape implements ClientModInitializer {
                         }
                     }
                     catch (RuntimeException runtimeException) {
-                        LOGGER.warn("Invalid {} in resourcepack: '{}'", MUSIC_LIST_JSON, resource.getResourcePackName(), runtimeException);
+                        LOGGER.warn("Invalid {} in resourcepack: '{}'", MUSIC_LIST_JSON, resource.getPackId(), runtimeException);
                     }
                 }
             } catch (IOException ignored) {}
@@ -143,7 +142,7 @@ public class Mixtape implements ClientModInitializer {
                         }
                     }
                     catch (RuntimeException runtimeException) {
-                        LOGGER.warn("Invalid {} in resourcepack: '{}'", ALBUM_LIST_JSON, resource.getResourcePackName(), runtimeException);
+                        LOGGER.warn("Invalid {} in resourcepack: '{}'", ALBUM_LIST_JSON, resource.getPackId(), runtimeException);
                     }
                 }
             } catch (IOException ignored) {}
